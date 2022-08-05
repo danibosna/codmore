@@ -10,7 +10,7 @@ const AboutSect = () => {
           <Image src={bg} alt="bg" height="200" layout="fixed" />
         </div>
         <div className="flex flex-col items-center px-4 text-center hid-scroll overlay">
-          <h2 className="text-2xl text-indigo-50 font-bold">Adadtamos Tecnologia a tus Necesidades</h2>
+          <h2 className="text-2xl text-indigo-50 font-bold">Integrando Comunidades</h2>
           <p className="text-center text-indigo-50">
             Somos una empresa dedicada al desarrollo y posicionamiento de nuestros socios en el entorno de la industria tecnológica. A nivel profesional buscamos crecer en conjunto con nuestros
             clientes para impulsar e incrementar positivamente las Analíticas de los Procesos Internos de su Industria y permitiendo así ofrecer estadísticas rápidas y precisas para la toma de

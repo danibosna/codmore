@@ -35,7 +35,7 @@ const ContactSect = () => {
       <div className="flex pt-4">
         <div className="flex flex-col px-6">
           <form ref={form} action={`https://formspree.io/f/${formKey}`} onSubmit={handleSubmit} method="POST" encType="text/plain">
-            <Input tag="input" label="*Name" forLabel="name" name="name" type="text" id="name" placeholder="Ej. Daniel" autocomplete="autocomplete" required="required" />
+            <Input tag="input" label="*Nombre" forLabel="name" name="name" type="text" id="name" placeholder="Ej. Daniel" autocomplete="autocomplete" required="required" />
 
             <Input tag="input" label="E-mail" forLabel="email" name="email" type="email" id="email" placeholder="example@email.com" required="required" />
 

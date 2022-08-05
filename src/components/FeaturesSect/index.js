@@ -6,7 +6,7 @@ import building from '@assets/images/construction.svg';
 const FeaturesSect = () => {
   return (
     <section className="inline-flex px-10 py-4 flex-col top-20 justify-self-center custom-container">
-      <h2 className="text-4xl text-indigo-50 font-bold">Features.</h2>
+      <h2 className="text-4xl text-indigo-50 font-bold">Desarrollos</h2>
       <div className="flex pt-4">
         <div className="flex items-center px-12">
           <Image src={building} alt="qr" width="350" height="350" layout="intrinsic" />
