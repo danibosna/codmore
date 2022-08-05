@@ -20,7 +20,7 @@ export default function Edit() {
     } catch (error) {
       console.log(error);
     }
-  }, [router?.isReady]);
+  }, [router?.isReady, router?.query]);
 
   return <FormProduct product={product} />;
 }
