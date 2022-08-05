@@ -5,8 +5,10 @@ import { ChevronDoubleRightIcon } from '@heroicons/react/solid';
 import qr from '@assets/images/ws_qr_code.png';
 import { useForm } from '@formspree/react';
 
+const formKey = process.env.NEXT_PUBLIC_FORM_CONTACT;
+
 const ContactSect = () => {
-  const [formState, setFormState] = useForm(process.env.NEXT_PUBLIC_FORM_CONTACT);
+  const [formState, setFormState] = useForm(formKey);
 
   const form = useRef(null);
 
@@ -32,7 +34,7 @@ const ContactSect = () => {
       <h2 className="text-4xl text-indigo-50 font-bold">Contact.</h2>
       <div className="flex pt-4">
         <div className="flex flex-col px-6">
-          <form ref={form} action={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_CONTACT}`} onSubmit={handleSubmit} method="POST" encType="text/plain">
+          <form ref={form} action={`https://formspree.io/f/${formKey}`} onSubmit={handleSubmit} method="POST" encType="text/plain">
             <Input tag="input" label="*Name" forLabel="name" name="name" type="text" id="name" placeholder="Ej. Daniel" autocomplete="autocomplete" required="required" />
 
             <Input tag="input" label="E-mail" forLabel="email" name="email" type="email" id="email" placeholder="example@email.com" required="required" />
