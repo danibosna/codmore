@@ -11,7 +11,7 @@ const Service = ({ titulo, src, alt, info }) => {
         <h3 className="mx-0 mb-6 font-bold text-indigo-50 text-base">{titulo}</h3>
         <div className="inline-flex flex-col justify-self-end">
           <p className="font-normal text-indigo-50 text-sm pb-4">{info}</p>
-          <button className="text-indigo-700 text-lg font-semibold border-indigo-800 custom-button">More Inf.</button>
+          <button className="text-indigo-700 text-lg font-semibold border-indigo-800 custom-button">Info.</button>
         </div>
       </div>
     </div>
