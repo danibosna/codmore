@@ -8,7 +8,7 @@ import { useForm } from '@formspree/react';
 const formKey = process.env.NEXT_PUBLIC_FORM_CONTACT;
 
 const ContactSect = () => {
-  const [formState, setFormState] = useForm(formKey);
+  const [formState, setFormState] = useForm();
 
   const form = useRef(null);
 
