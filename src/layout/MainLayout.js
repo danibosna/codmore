@@ -11,7 +11,7 @@ export default function MainLayout({ children }) {
       <Hero3D />
       <AnimatePresence exitBeforeEnter initial={false}>
         <LazyMotion features={domAnimation}>
-          <m.main {...pageMotionProps} key={router.asPath} className="grid grid-rows-1">
+          <m.main {...pageMotionProps} key={router.asPath} className="grid grid-cols-1">
             {children}
           </m.main>
         </LazyMotion>
