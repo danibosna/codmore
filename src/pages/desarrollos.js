@@ -1,10 +1,10 @@
-import FeaturesSect from '@components/FeaturesSect';
+import DevSect from '@components/DevSect';
 import React from 'react';
 
-export default function Features() {
+export default function Dev() {
   return (
     <>
-      <FeaturesSect />
+      <DevSect />
     </>
   );
 }
