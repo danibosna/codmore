@@ -8,8 +8,8 @@ import services4 from '@assets/images/Services4.webp';
 
 const ServicesSect = () => {
   return (
-    <section className="absolute top-[15%] h-4/5 md:w-4/5 md:right-0 hid-scroll overflow-auto">
-      <h2 className="text-4xl text-indigo-700 font-bold text-center">Servicios</h2>
+    <section className="absolute top-32 h-4/5 md:w-4/5 md:right-0 hid-scroll overflow-auto">
+      <h2 className="text-4xl text-slate-700 shadow-xl shadow-slate-50 font-bold text-center bg-white backdrop-blur-md">Servicios</h2>
       <div className="pt-8">
         <div className="inline-flex justify-around flex-wrap">
           <Service

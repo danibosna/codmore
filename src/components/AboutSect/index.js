@@ -1,22 +1,18 @@
 import React from 'react';
-import bg from '@assets/images/LogoCodMoreHDW.webp';
 import Image from 'next/image';
+import building from '@assets/images/construction.svg';
 
 const AboutSect = () => {
   return (
     <>
-      <section className="pb-4 px-0 inline-flex flex-col custom-container left-2/3 w-1/4 h-4/5 top-16">
-        <div className="justify-center flex m-0 p-0">
-          <Image src={bg} alt="bg" height="200" layout="fixed" />
+      <section className="p-0 inline-flex flex-col custom-container md:w-4/6 bottom-12 justify-self-center w-2/3 md:right-10 md:flex-row ">
+        <div className="flex flex-col items-center justify-between px-4 text-center">
+          <h2 className="my-4 text-2xl text-slate-50 font-bold">Tu Inicio en la Tecnologia BlockChain</h2>
+          <h3 className="my-4 text-2xl text-slate-50 font-bold">En Construcción</h3>
+          <button className="my-4 py-2 px-4 text-slate-400 text-2xl font-bold border-blue-400 custom-button">Ver Más</button>
         </div>
-        <div className="flex flex-col items-center px-4 text-center hid-scroll overlay">
-          <h2 className="text-2xl text-indigo-50 font-bold">Integrando Comunidades</h2>
-          <p className="text-center text-indigo-50">
-            Somos una empresa dedicada al desarrollo y posicionamiento de nuestros socios en el entorno de la industria tecnológica. A nivel profesional buscamos crecer en conjunto con nuestros
-            clientes para impulsar e incrementar positivamente las Analíticas de los Procesos Internos de su Industria y permitiendo así ofrecer estadísticas rápidas y precisas para la toma de
-            decisiones y cumplir con los objetivos propuestos, implementando Metodologías Modernas para eficientizar los procesos en distintos mercados y estar así a la vanguardia en una industria con
-            un crecimiento acelerado.
-          </p>
+        <div className="flex flex-col items-center justify-between px-4 text-center">
+          <Image src={building} alt="qr" width="350" height="350" layout="intrinsic" priority />
         </div>
       </section>
     </>

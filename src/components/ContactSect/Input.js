@@ -3,7 +3,7 @@ import React from 'react';
 const Input = ({ tag, label, forLabel, type, name, id, placeholder, autocomplete, required, value, cols, rows }) => {
   const input = (
     <input
-      className="text-indigo-50 bg-transparent border-0 border-b-2 border-indigo-800 mb-2"
+      className="text-indigo-50 bg-transparent border-0 border-b-2 border-slate-50 mb-2"
       type={type}
       name={name}
       id={id}
@@ -13,7 +13,7 @@ const Input = ({ tag, label, forLabel, type, name, id, placeholder, autocomplete
       value={value}
     />
   );
-  const texArea = <textarea className="text-indigo-50 bg-transparent border-2 border-indigo-800 custom-container relative" name={name} id={id} cols={cols} rows={rows}></textarea>;
+  const texArea = <textarea className="text-indigo-50 bg-transparent border-2 border-slate-50 custom-container relative" name={name} id={id} cols={cols} rows={rows}></textarea>;
 
   return (
     <p className="flex flex-col">

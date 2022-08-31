@@ -8,10 +8,10 @@ const Service = ({ titulo, src, alt, info }) => {
         <Image src={src} alt={alt} sizes="30vw" layout="responsive" />
       </figure>
       <div className="p-4 flex flex-col">
-        <h3 className="mx-0 mb-6 font-bold text-indigo-50 text-base">{titulo}</h3>
+        <h3 className="mx-0 mb-6 text-slate-50 font-bold text-base">{titulo}</h3>
         <div className="inline-flex flex-col justify-self-end">
-          <p className="font-normal text-indigo-50 text-sm pb-4">{info}</p>
-          <button className="text-indigo-700 text-lg font-semibold border-indigo-800 custom-button">Info.</button>
+          <p className="font-normal text-slate-50 text-sm pb-4">{info}</p>
+          <button className="text-slate-50 text-lg font-semibold border-slate-50 custom-button">Info.</button>
         </div>
       </div>
     </div>

@@ -34,7 +34,7 @@ export default function Nav() {
             <a
               key={item.name}
               href={item.href}
-              className={classNames(item.current ? 'text-white mb-2 custom-button' : 'text-gray-300 hover:text-indigo-700 hover:custom-button', 'px-3 py-2 text-sm font-medium mb-2')}
+              className={classNames(item.current ? 'text-white mb-2 custom-button' : 'text-slate-900 hover:text-slate-50 hover:custom-button', 'px-3 py-2 text-sm font-medium mb-2')}
               aria-current={item.current ? item.current : undefined}
             >
               {item.name}
