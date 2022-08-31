@@ -26,7 +26,7 @@ function Model({ name, ...props }) {
       // Right click cycles through the transform modes
       onContextMenu={(e) => snap.current === name && (e.stopPropagation(), (state.mode = (snap.mode + 1) % modes.length))}
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
-      onPointerOut={(e) => setHovered(false)}
+      onPointerOut={() => setHovered(false)}
       name={name}
       geometry={nodes[name].geometry}
       material={nodes[name].material}
