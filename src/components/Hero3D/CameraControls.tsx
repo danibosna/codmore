@@ -16,7 +16,7 @@ const CameraControls = () => {
 
   // Ref to the controls, so that we can update them on every frame using useFrame
   const controls = useRef();
-  useFrame(() => controls.current.update());
+  useFrame(() => controls.current?.update());
   return <orbitControls ref={controls} args={[camera, domElement]} enableZoom maxAzimuthAngle={Math.PI / 1} maxPolarAngle={Math.PI} minAzimuthAngle={-Math.PI / 1} minPolarAngle={0} />;
 };
 
