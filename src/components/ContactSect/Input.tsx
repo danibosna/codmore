@@ -1,6 +1,21 @@
 import React from 'react';
 
-const Input = ({ tag, label, forLabel, type, name, id, placeholder, autocomplete, required, value, cols, rows }) => {
+type InputProps = {
+  tag?: string;
+  label?: string;
+  forLabel?: string;
+  type?: string;
+  name?: string;
+  id?: string;
+  placeholder?: string;
+  autocomplete?: string;
+  required?: boolean;
+  value?: string;
+  cols?: number;
+  rows?: number;
+};
+
+const Input = ({ tag, label, forLabel, type, name, id, placeholder, autocomplete, required, value, cols, rows }: InputProps) => {
   const input = (
     <input
       className="text-indigo-50 bg-transparent border-0 border-b-2 border-slate-50 mb-2"

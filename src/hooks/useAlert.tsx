@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useAlert = (options) => {
+const useAlert = (options: { active: boolean; message: string; type: string; autoClose: boolean }) => {
   const defaultOptions = {
     active: false,
     message: '',
@@ -11,8 +11,11 @@ const useAlert = (options) => {
     ...defaultOptions,
     ...options,
   });
-  const toggleAlert = () => {
-    setAlert(!alert.active);
+  const toggleAlert = (): void => {
+    setAlert({
+      ...alert,
+      active: !alert.active,
+    });
   };
 
   return {

@@ -1,11 +1,19 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
-const Service = ({ titulo, src, alt, info }) => {
+interface Props {
+  id: string | number;
+  titulo: string;
+  src: StaticImageData;
+  alt: string;
+  info: string;
+}
+
+const Service = ({ titulo, src, alt, info }: Props) => {
   return (
     <div className="custom-card p-0 w-80 mb-8">
       <figure className="m-0 p-0">
-        <Image src={src} alt={alt} sizes="30vw" layout="responsive" />
+        <Image src={src} alt={alt} sizes="30vw" />
       </figure>
       <div className="p-4 flex flex-col">
         <h3 className="mx-0 mb-6 text-slate-50 font-bold text-base">{titulo}</h3>

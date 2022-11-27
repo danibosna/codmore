@@ -1,23 +1,13 @@
-import { useRef } from 'react';
-import { useRouter } from 'next/router';
+import { FormEvent, useRef } from 'react';
 import { LockClosedIcon } from '@heroicons/react/solid';
-import { useAuth } from '@hooks/useAuth';
 import Image from 'next/image';
 
 export default function LoginSect() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const auth = useAuth();
-  const router = useRouter();
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-
-    auth.signIn(email, password).then(() => {
-      router.push('/dashboard');
-    });
   };
 
   return (

@@ -2,12 +2,20 @@ import Head from 'next/head';
 // import Script from 'next/script';
 import { ProviderAuth } from '@hooks/useAuth';
 import MainLayout from '@layout/MainLayout';
-import Nav from '@common/Nav';
-import Header from '@common/Header';
 // import { GA_TRACKING_ID } from '@utils/gtag';
+import { Web3ReactProvider } from '@web3-react/core';
+import { getLibrary } from '@utils/web3.config';
+import { JSXElementConstructor } from 'react';
+import { AppInitialProps } from 'next/app';
 import '@styles/tailwind.css';
 
-function MyApp({ Component, pageProps, titleHead, descriptionHead }) {
+type AppProps = AppInitialProps & {
+  Component: JSXElementConstructor<AppInitialProps>;
+  titleHead: string;
+  descriptionHead: string;
+};
+
+function MyApp({ Component, pageProps, titleHead, descriptionHead }: AppProps) {
   return (
     <>
       <Head>
@@ -34,13 +42,13 @@ function MyApp({ Component, pageProps, titleHead, descriptionHead }) {
         }}
       />
       <Script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1" /> */}
-      <ProviderAuth>
-        <Header />
-        <Nav />
-        <MainLayout>
-          <Component {...pageProps} />
-        </MainLayout>
-      </ProviderAuth>
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <ProviderAuth>
+          <MainLayout>
+            <Component {...pageProps} />
+          </MainLayout>
+        </ProviderAuth>
+      </Web3ReactProvider>
     </>
   );
 }

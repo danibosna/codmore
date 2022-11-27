@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei';
 
-const useLoadModel = async (model) => {
-  const { nodes, materials } = await useGLTF(model);
+const useLoadModel = (model) => {
+  const { nodes, materials } = useGLTF(model);
 
   return {
     nodes,

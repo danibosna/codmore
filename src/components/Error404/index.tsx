@@ -12,7 +12,7 @@ const Error404 = () => {
           <XCircleIcon className="" />
         </Link>
         <figure>
-          <Image src={logo} alt="Codmore" layout="intrinsic" />
+          <Image src={logo} alt="Codmore" />
         </figure>
         <div className="">
           <h2 className="">Error. 404</h2>

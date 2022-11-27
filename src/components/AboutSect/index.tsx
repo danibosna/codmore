@@ -12,7 +12,7 @@ const AboutSect = () => {
           <button className="my-4 py-2 px-4 text-slate-400 text-2xl font-bold border-blue-400 custom-button">Ver Más</button>
         </div>
         <div className="flex flex-col items-center justify-between px-4 text-center">
-          <Image src={building} alt="qr" width="350" height="350" layout="intrinsic" priority />
+          <Image src={building} alt="qr" width="350" height="350" priority />
         </div>
       </section>
     </>

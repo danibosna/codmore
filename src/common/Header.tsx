@@ -12,18 +12,18 @@ export default function Header() {
         <div className="flex justify-between mx-8">
           <Link href="/" passHref>
             <figure className="p-0 m-0">
-              <Image src={logo} alt="codmore_logo" width="225" height="150" layout="intrinsic" className="cursor-pointer" />
+              <Image src={logo} alt="codmore_logo" width="225" height="150" className="cursor-pointer" />
             </figure>
           </Link>
           <div className="flex flex-col justify-evenly">
             <Link href="https://twitter.com/" passHref>
               <figure className="p-0 m-0">
-                <Image src={twitter} alt="twitter" width="20" height="20" layout="intrinsic" className="cursor-pointer" />
+                <Image src={twitter} alt="twitter" width="20" height="20" className="cursor-pointer" />
               </figure>
             </Link>
             <Link href="https://instagram.com/" passHref>
               <figure className="p-0 m-0">
-                <Image src={instagram} alt="instagram" width="20" height="20" layout="intrinsic" className="cursor-pointer" />
+                <Image src={instagram} alt="instagram" width="20" height="20" className="cursor-pointer" />
               </figure>
             </Link>
           </div>

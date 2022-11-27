@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const isDev = process.env.NODE_ENV === 'development';
 const withTM = require('next-transpile-modules')(['three', '@react-three/fiber', '@react-three/drei']);
 
 const nextConfig = withTM({
@@ -13,7 +12,6 @@ const nextConfig = withTM({
     });
     return config;
   },
-  assetPrefix: isDev ? 'http://localhost:3000' : '',
 });
 
 module.exports = nextConfig;

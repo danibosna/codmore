@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Loading from './Loading';
 import CameraControls from './CameraControls';
-import Model from './Studio-setup-minimal.js';
+import Model from './Studio-setup-minimal';
 
 const Hero3D = () => {
   return (

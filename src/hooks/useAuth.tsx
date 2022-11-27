@@ -1,11 +1,14 @@
-import React, { useContext, useState, createContext } from 'react';
+import React, { useContext, useState, createContext, ReactNode } from 'react';
 import Cookie from 'js-cookie';
 import endPoints from '@services/api';
 import axios from 'axios';
 
-const AuthContext = createContext();
+const AuthContext = createContext({});
+interface Props {
+  children: ReactNode;
+}
 
-export function ProviderAuth({ children }) {
+export function ProviderAuth({ children }: Props) {
   const auth = useProviderAuth();
 
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
@@ -18,7 +21,7 @@ export const useAuth = () => {
 function useProviderAuth() {
   const [user, setUser] = useState(null);
 
-  const signIn = async (email, password) => {
+  const signIn = async (email: string, password: string) => {
     const options = {
       headers: {
         accept: '*/*',
@@ -32,7 +35,9 @@ function useProviderAuth() {
     if (access_token) {
       const token = access_token;
       Cookie.set('token', access_token, { expires: 5 });
-      axios.defaults.headers.Authorization = `Bearer ${token}`;
+      axios.defaults.headers.options = {
+        Authorization: `Bearer ${token}`,
+      };
       const {
         data: { user },
       } = await axios.get(endPoints.auth.profile);
@@ -43,7 +48,7 @@ function useProviderAuth() {
   const logout = () => {
     Cookie.remove('token');
     setUser(null);
-    delete axios.defaults.headers.Authorization;
+    axios.defaults.headers.delete;
     window.location.href = '/login';
   };
 
