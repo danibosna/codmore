@@ -1,4 +1,4 @@
-import React, { FormEvent, ReactElement, useRef } from 'react';
+import React, { FormEvent, useRef } from 'react';
 import Image from 'next/image';
 import Input from '@components/ContactSect/Input';
 import { ChevronDoubleRightIcon } from '@heroicons/react/solid';
@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 const formKey = process.env.NEXT_PUBLIC_FORM_CONTACT;
 
-const ContactSect = (): ReactElement => {
+const ContactSect = () => {
   const router = useRouter();
   const [formState, setFormState] = useForm(`"${formKey}"`);
 
