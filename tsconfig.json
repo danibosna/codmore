@@ -35,7 +35,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/utils/gtag.js", "src/hooks/useLoadModel.jsx", "src/components/Hero3D/Studio-setup-minimal.jsx", "src/components/Hero3D/CameraControls.jsx"  ],
+, "src/utils/gtag.js", "src/hooks/useLoadModel.jsx", "src/components/Hero3D/Studio-setup-minimal.jsx", "src/components/Hero3D/CameraControls.jsx", "src/components/ContactSect/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
