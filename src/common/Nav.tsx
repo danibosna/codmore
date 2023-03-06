@@ -1,4 +1,5 @@
 // import { useAuth } from '@hooks/useAuth';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const navigation = [
@@ -21,13 +22,13 @@ export default function Nav() {
       <div className="hidden md:block">
         <div className="ml-1 flex flex-col items-baseline justify-around">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={classNames(item.href == route ? 'text-white mb-2 custom-button' : 'text-slate-900 hover:text-slate-50 hover:custom-button', 'px-3 py-2 text-sm font-medium mb-2')}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
