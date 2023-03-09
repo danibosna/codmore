@@ -8,10 +8,10 @@ import services4 from '@assets/images/Services4.webp';
 
 const ServicesSect = () => {
   return (
-    <section className="absolute top-32 h-4/5 md:w-4/5 md:right-0 hid-scroll overflow-auto">
-      <h2 className="text-4xl text-slate-700 shadow-xl shadow-slate-50 font-bold text-center bg-white backdrop-blur-md">Servicios</h2>
-      <div className="pt-8">
-        <div className="inline-flex justify-around flex-wrap">
+    <section className="w-full h-screen flex flex-col items-center justify-center pb-12 pt-28">
+      <h2 className="text-4xl text-slate-700 shadow-xl shadow-slate-50 font-bold text-center bg-white backdrop-blur-md w-full mb-6">Servicios</h2>
+      <div className="w-full overflow-y-scroll hid-scroll">
+        <div className="w-full inline-flex justify-around flex-wrap px-10">
           <Service
             id="0"
             titulo="Solid Web Project"

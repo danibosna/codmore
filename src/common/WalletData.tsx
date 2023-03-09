@@ -36,7 +36,7 @@ const WalletData = () => {
   const truncatedAddress = useTruncatedAddress(account);
 
   return (
-    <div className={`flex absolute bottom-3 left-[85%] w-34 custom-button py-1 px-3 ${active && 'bg-green-600 bg-opacity-50'}`}>
+    <div className={`text-slate-50 text-2xl font-bold border-slate-50 w-2/4 py-1 custom-button ${active && 'bg-green-600 bg-opacity-50'}`}>
       {active ? (
         <div className="flex w-full">
           <div>

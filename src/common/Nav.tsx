@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const navigation = [
-  { name: 'Inicio', href: '/' },
   { name: 'Servicios', href: '/servicios' },
   { name: 'Desarrollos', href: '/desarrollos' },
+  { name: 'Connect', href: '/' },
   { name: 'Nosotros', href: '/nosotros' },
   { name: 'Contacto', href: '/contacto' },
 ];
@@ -18,14 +18,14 @@ export default function Nav() {
   const { route } = useRouter();
 
   return (
-    <nav className="z-20 fixed bottom-1 left-8 h-auto">
-      <div className="hidden md:block">
-        <div className="ml-1 flex flex-col items-baseline justify-around">
+    <nav className="z-50 fixed bottom-1 flex justify-center w-full">
+      <div className="flex w-4/6 justify-center">
+        <div className="flex items-center justify-around">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={classNames(item.href == route ? 'text-white mb-2 custom-button' : 'text-slate-900 hover:text-slate-50 hover:custom-button', 'px-3 py-2 text-sm font-medium mb-2')}
+              className={classNames(item.href == route ? 'text-white mb-2 custom-button' : 'text-slate-900 hover:text-slate-50 hover:custom-button', 'px-3 py-2 md:text-sm font-medium mb-2 text-xs')}
             >
               {item.name}
             </Link>

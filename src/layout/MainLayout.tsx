@@ -7,7 +7,6 @@ import { ReactNode, useEffect } from 'react';
 import Web3 from 'web3';
 import Header from '@common/Header';
 import Nav from '@common/Nav';
-import WalletData from '@common/WalletData';
 
 declare var window: any;
 interface Props {
@@ -26,15 +25,15 @@ export default function MainLayout({ children }: Props) {
     <>
       <Header />
       <Nav />
-      <Hero3D />
-      <AnimatePresence exitBeforeEnter initial={false}>
-        <LazyMotion features={domAnimation}>
-          <m.main {...pageMotionProps} key={router.asPath} className="grid grid-cols-1">
-            {children}
-            <WalletData />
-          </m.main>
-        </LazyMotion>
-      </AnimatePresence>
+      <Hero3D>
+        <AnimatePresence exitBeforeEnter initial={false}>
+          <LazyMotion features={domAnimation}>
+            <m.main {...pageMotionProps} key={router.asPath} className="w-full h-screen absolute z-30 bottom-0">
+              {children}
+            </m.main>
+          </LazyMotion>
+        </AnimatePresence>
+      </Hero3D>
     </>
   );
 }
