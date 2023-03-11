@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <>
-      <header className="fixed w-screen z-50">
+      <header className="fixed w-screen top-0 z-90">
         <div className="flex justify-between mx-8">
           <Link href="/" passHref>
             <figure className="p-0 m-0">

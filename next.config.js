@@ -3,6 +3,7 @@ const withTM = require('next-transpile-modules')(['three', '@react-three/fiber',
 
 const nextConfig = withTM({
   reactStrictMode: true,
+  output: 'standalone',
   webpack(config) {
     config.module.rules.push({
       test: /\.(glb|gltf)$/,

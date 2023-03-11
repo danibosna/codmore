@@ -8,6 +8,7 @@ import { getLibrary } from '@utils/web3.config';
 import { JSXElementConstructor } from 'react';
 import { AppInitialProps } from 'next/app';
 import '@styles/tailwind.css';
+import Hero3D from '@components/Hero3D';
 
 type AppProps = AppInitialProps & {
   Component: JSXElementConstructor<AppInitialProps>;
@@ -44,6 +45,7 @@ function MyApp({ Component, pageProps, titleHead, descriptionHead }: AppProps) {
       <Script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1" /> */}
       <Web3ReactProvider getLibrary={getLibrary}>
         <ProviderAuth>
+          <Hero3D />
           <MainLayout>
             <Component {...pageProps} />
           </MainLayout>
