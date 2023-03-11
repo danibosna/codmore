@@ -1,4 +1,4 @@
-import React, { FormEvent, ReactElement, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Input from '@components/ContactSect/Input';
 import { ChevronDoubleRightIcon } from '@heroicons/react/solid';
@@ -8,15 +8,16 @@ import { useRouter } from 'next/router';
 
 const formKey = process.env.NEXT_PUBLIC_FORM_CONTACT;
 
-const ContactSect = (): ReactElement => {
+const ContactSect = () => {
   const router = useRouter();
   const [formState, setFormState] = useForm(`"${formKey}"`);
 
-  const form = useRef(undefined);
+  const form = useRef(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData(form.current);
+    const formCurrent = form.current;
+    const formData = new FormData(formCurrent);
     const data = {
       username: formData.get('name'),
       email: formData.get('email'),
@@ -34,7 +35,7 @@ const ContactSect = (): ReactElement => {
       <h2 className="text-4xl text-slate-50 font-bold">Contact.</h2>
       <div className="flex flex-col lg:justify-around md:flex-row pt-4 overlay hid-scroll">
         <div className="flex flex-col px-6 md:w-2/4">
-          <form action={`https://formspree.io/f/${formKey}`} onSubmit={handleSubmit}>
+          <form ref={form} method="POST" encType="text/plain" action={`https://formspree.io/f/${formKey}`} onSubmit={handleSubmit}>
             <Input tag="input" label="*Nombre" forLabel="name" name="name" type="text" id="name" placeholder="Ej. Daniel" autocomplete="autocomplete" required />
 
             <Input tag="input" label="E-mail" forLabel="email" name="email" type="email" id="email" placeholder="example@email.com" required />
