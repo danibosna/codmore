@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Heading from '@components/Heading';
+import Heading from 'layouts/components/Heading';
 
 export default function Home() {
   return (

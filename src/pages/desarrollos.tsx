@@ -1,4 +1,4 @@
-import DevSect from '@components/DevSect';
+import DevSect from 'layouts/components/DevSect';
 import React from 'react';
 
 export default function Dev() {

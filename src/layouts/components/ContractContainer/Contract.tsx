@@ -9,7 +9,7 @@ interface Props {
   info: string;
 }
 
-const Service = ({ titulo, src, alt, info }: Props) => {
+const Contract = ({ titulo, src, alt, info }: Props) => {
   return (
     <div className="custom-card p-0 w-80 mb-8">
       <figure className="m-0 p-0">
@@ -26,4 +26,4 @@ const Service = ({ titulo, src, alt, info }: Props) => {
   );
 };
 
-export default Service;
+export default Contract;

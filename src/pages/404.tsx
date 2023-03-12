@@ -1,4 +1,4 @@
-import Error404 from '@components/Error404';
+import Error404 from 'layouts/components/Error404';
 import React from 'react';
 
 const Custom404 = () => {

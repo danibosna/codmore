@@ -1,10 +1,10 @@
-import ServicesSect from '@components/ServicesSect';
+import ContractContainer from 'layouts/components/ContractContainer';
 import React from 'react';
 
 export default function Services() {
   return (
     <>
-      <ServicesSect />
+      <ContractContainer />
     </>
   );
 }

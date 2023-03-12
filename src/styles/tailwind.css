@@ -19,7 +19,7 @@
     -webkit-backdrop-filter: blur(.1rem);
     outline: 1px solid rgba(250, 245, 255, .2);
     outline-offset: -1px;
-    position: absolute;
+    /* position: absolute; */
     -webkit-clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
     clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
     -webkit-box-shadow: 3px 2px 10px 1px rgba(0,0,0,0.43);
@@ -50,5 +50,9 @@
     position: relative;
     -webkit-clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
     clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  }
+  .main-contain{
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

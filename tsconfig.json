@@ -2,11 +2,12 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@common/*": ["common/*"],
-      "@components/*": ["components/*"],
+      "@common/*": ["layouts/common/*"],
+      "@components/*": ["layouts/components/*"],
       "@hooks/*": ["hooks/*"],
-      "@layout/*": ["layout/*"],
+      "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
+      "@modules/*": ["modules/*"],
       "@services/*": ["services/*"],
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
@@ -35,7 +36,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/utils/gtag.js", "src/hooks/useLoadModel.jsx", "src/components/Hero3D/Studio-setup-minimal.jsx", "src/components/Hero3D/CameraControls.jsx", "src/components/ContactSect/index.jsx"  ],
+, "src/utils/gtag.js", "src/hooks/useLoadModel.jsx", "src/layouts/components/Hero3D/Studio-setup-minimal.jsx", "src/layouts/components/Hero3D/CameraControls.jsx", "src/layouts/components/ContactContainer/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
