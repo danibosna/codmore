@@ -3,7 +3,7 @@ import { connector } from '@utils/web3.config';
 import { useCallback, useEffect, useState } from 'react';
 import useTruncatedAddress from '@hooks/useTruncatedAddress';
 import Link from 'next/link';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 const WalletData = () => {
   const [balance, setBalance] = useState(0);
@@ -28,7 +28,7 @@ const WalletData = () => {
   }, [library?.eth, account]);
 
   const login = () => {
-    return router.replace("/desarrollos");
+    return router.replace('/desarrollos');
   };
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const WalletData = () => {
           </button>
         </div>
       ) : (
-        <button type="button" onClick={ isUnsupportedChain ? login : connect} >
+        <button type="button" onClick={isUnsupportedChain ? login : connect}>
           {isUnsupportedChain ? 'login' : 'Sepolia Testnet'}
         </button>
       )}
