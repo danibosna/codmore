@@ -3,10 +3,12 @@ import { connector } from '@utils/web3.config';
 import { useCallback, useEffect, useState } from 'react';
 import useTruncatedAddress from '@hooks/useTruncatedAddress';
 import Link from 'next/link';
+import { useRouter } from "next/router";
 
 const WalletData = () => {
   const [balance, setBalance] = useState(0);
   const { active, activate, deactivate, account, error, library } = useWeb3React();
+  const router = useRouter();
 
   const isUnsupportedChain = error instanceof UnsupportedChainIdError;
 
@@ -24,6 +26,10 @@ const WalletData = () => {
     const toSet = await library.eth.getBalance(account);
     setBalance(Number((toSet / 1e18).toFixed(2)));
   }, [library?.eth, account]);
+
+  const login = () => {
+    return router.replace("/desarrollos");
+  };
 
   useEffect(() => {
     if (active) getBalance();
@@ -48,8 +54,8 @@ const WalletData = () => {
           </button>
         </div>
       ) : (
-        <button type="button" onClick={connect} disabled={isUnsupportedChain}>
-          {isUnsupportedChain ? 'no support' : 'Goerli Testnet'}
+        <button type="button" onClick={ isUnsupportedChain ? login : connect} >
+          {isUnsupportedChain ? 'login' : 'Sepolia Testnet'}
         </button>
       )}
     </div>
