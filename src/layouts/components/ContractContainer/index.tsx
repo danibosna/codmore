@@ -9,7 +9,7 @@ import services4 from '@assets/images/Services4.webp';
 const ContractContainer = () => {
   return (
     <section className="w-full h-screen flex flex-col items-center justify-center pb-12 pt-28">
-      <h2 className="text-4xl text-slate-700 shadow-xl shadow-slate-50 font-bold text-center bg-white backdrop-blur-md w-full mb-6">Servicios</h2>
+      <h2 className="text-4xl text-slate-700 shadow-xl shadow-slate-50 font-bold text-center bg-white backdrop-blur-md w-full mb-6">Contratos</h2>
       <div className="w-full overflow-y-scroll hid-scroll">
         <div className="w-full inline-flex justify-around flex-wrap px-10">
           <Contract
