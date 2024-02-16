@@ -8,7 +8,7 @@ const endPoints = {
   },
   products: {
     allProducts: `${API}/api/${VERSION}/products`,
-    getProduct: (id: string | string[]) => `${API}/api/${VERSION}/products/${id}/`,
+    getProduct: (id: string) => `${API}/api/${VERSION}/products/${id}/`,
     getProducts: (limit: string, offset: string) => `${API}/api/${VERSION}/products?limit=${limit}&offset=${offset}`,
     addProducts: `${API}/api/${VERSION}/products`,
     updateProducts: (id: string) => `${API}/api/${VERSION}/products/${id}/`,

@@ -1,18 +1,42 @@
-/** @type {import('next').NextConfig} */
-const withTM = require('next-transpile-modules')(['three', '@react-three/fiber', '@react-three/drei']);
+/**
+ * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
+ * for Docker builds.
+ */
+await import("./src/env.js");
 
-const nextConfig = withTM({
-  reactStrictMode: true,
-  output: 'standalone',
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.(glb|gltf)$/,
-      use: {
-        loader: 'file-loader',
-      },
-    });
-    return config;
-  },
-});
+/** @type {import("next").NextConfig} */
+const config = {
+  // webpack: (config, options) => {
+  //   config.module.rules.push({
+  //     test: /\.(glb|gltf)$/,
+  //     use: [
+  //       options.defaultLoaders.babel,
+  //       {
+  //         loader: "file-loader",
+  //         // options: pluginOptions.options,
+  //       },
+  //       options.isServer,
+  //     ],
+  //   });
+  //   return config;
+  // },
+  // experimental: {
+  //   turbo: {
+  //     rules: {
+  //       // Option format
+  //       '*.gltf': [
+  //         {
+  //           loader: 'file-loader',
+  //           options: {
+  //             format: 'gltf',
+  //           },
+  //         },
+  //       ],
+  //       // Option-less format
+  //       '*.glb': ['file-loader'],
+  //     },
+  //   },
+  // }
+};
 
-module.exports = nextConfig;
+export default config;
