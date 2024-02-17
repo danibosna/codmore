@@ -26,7 +26,7 @@ export const Main3D = ({ children }: Props) => {
           <Lights />
           <OrbitControls autoRotate />
           <Model />
-          <Stats />
+          {/* <Stats /> */}
         </Suspense>
       </Canvas>
       <main className="absolute bottom-0 z-30 w-full">{children}</main>
