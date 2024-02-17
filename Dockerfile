@@ -7,7 +7,7 @@ RUN apk add --no-cache libc6-compat
 RUN corepack enable && corepack prepare pnpm@7.19.0 --activate
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 # Rebuild the source code only when needed
 FROM node:18-alpine AS builder
@@ -15,7 +15,7 @@ RUN corepack enable && corepack prepare pnpm@7.19.0 --activate
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN pnpm run build
+RUN pnpm run dev
 
 # Production image, copy all the files and run next
 FROM node:18-alpine AS runner
