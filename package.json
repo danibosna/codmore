@@ -53,6 +53,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.158.0",
+    "three-stdlib": "^2.29.4",
     "web3": "^4.5.0",
     "zod": "^3.22.4"
   },
