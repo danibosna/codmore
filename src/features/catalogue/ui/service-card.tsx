@@ -12,9 +12,7 @@ interface Props {
 export const ServiceCard = ({ titulo, src, alt, info }: Props) => {
   return (
     <div className="custom-card w-1/2">
-      <figure className="m-0 p-0">
-        <Image src={src} alt={alt} width={350} height={350} />
-      </figure>
+      <Image src={src} alt={alt} width={380} />
       <div className="p-4 flex flex-col">
         <h3 className="mx-0 mb-6 text-slate-50 font-bold text-base">{titulo}</h3>
         <div className="inline-flex flex-col justify-self-end">

@@ -1,75 +1,50 @@
-'use client';
-import { useWeb3React } from '@web3-react/core';
-import { connector } from '~/config/web3.config';
-import { useCallback, useEffect, useState } from 'react';
-import useTruncatedAddress from '~/lib/useTruncatedAddress';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+"use client";
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import ChainSelect from "./ChainSelect";
+import { CHAIN_INFO } from "~/lib/connectors/constants";
+import Wallet from "./Wallet";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { useWeb3React } from "@web3-react/core";
+import useWeb3 from "~/lib/useWeb3";
 
 const WalletData = () => {
-  const [balance, setBalance] = useState(0);
-  const { 
-    account,
-    accounts,
-    connector,
-    chainId,
-    isActive,
-    isActivating,
-    provider,
-    ENSName,
-    ENSNames
-  } = useWeb3React();
+  const { chainId, isActive } = useWeb3React();
+  const { getAvatarAccount } = useWeb3();
+  const { data } = getAvatarAccount;
 
-  const router = useRouter();
-
-  // const isUnsupportedChain = error;
-  //
-  // const connect = useCallback(() => {
-  //   activate(connector);
-  //   localStorage.setItem('previouslyConnected', 'true');
-  // }, [activate]);
-  //
-  // const disconnect = () => {
-  //   deactivate();
-  //   localStorage.removeItem('previouslyConnected');
-  // };
-  //
-  // const getBalance = useCallback(async () => {
-  //   const toSet = await library.eth.getBalance(account);
-  //   setBalance(Number((toSet / 1e18).toFixed(2)));
-  // }, [library?.eth, account]);
-  //
-  // const login = () => {
-  //   return router.replace('/desarrollos');
-  // };
-  //
-  // useEffect(() => {
-  //   if (active) getBalance();
-  // }, [active, getBalance]);
-  //
-  // useEffect(() => {
-  //   if (localStorage.getItem('previouslyConnected') === 'true') connect();
-  // }, [connect]);
-
-  const truncatedAddress = useTruncatedAddress(account);
+  console.log(data);
 
   return (
-    <div className={`text-slate-50 text-2xl w-full font-bold border-slate-50 py-1 custom-button ${isActive && 'bg-green-600 bg-opacity-50'}`}>
-      {isActive ? (
-        <div className="flex justify-around w-full">
-          <div>
-            <Link href={'/tokens'}>{truncatedAddress}</Link>
-          </div>
-          <span>~{balance} </span>
-          <button type="button" >
-            Îž
-          </button>
-        </div>
-      ) : (
-        <button type="button" >
-          {'Sepolia-Testnet'}
-        </button>
-      )}
+    <div
+      className={`custom-button mb-2 border-slate-50 text-xs font-bold text-slate-50 md:text-sm`}
+    >
+      <span className="mx-2">
+        {isActive && chainId ? CHAIN_INFO[chainId]?.label : ""}
+      </span>
+      <Popover>
+        <PopoverTrigger>
+          <Avatar className="custom-button">
+            <AvatarImage src="https://c8.alamy.com/comp/2HWBMC7/3d-bored-ape-character-nft-prime-ape-planet-swag-monkey-portrait-avatar-for-profile-picture-blockchain-based-artwork-art-collectibles-2HWBMC7.jpg" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        </PopoverTrigger>
+        <PopoverContent className="custom-container mr-6">
+          <Tabs defaultValue="wallet" className="text-center">
+            <TabsList className="custom-container gap-8">
+              <TabsTrigger value="chain">{"Chain & Swap"}</TabsTrigger>
+              <TabsTrigger value="wallet">{"Wallet"}</TabsTrigger>
+            </TabsList>
+            <TabsContent className="text-start text-white" value="chain">
+              <ChainSelect />
+            </TabsContent>
+            <TabsContent className="text-start text-white" value="wallet">
+              <Wallet />
+            </TabsContent>
+          </Tabs>
+        </PopoverContent>
+      </Popover>
     </div>
   );
 };

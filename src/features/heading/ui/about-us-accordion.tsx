@@ -8,7 +8,7 @@ import {
 
 export const AboutUsAccordion = () => {
   return (
-<Accordion type="single" collapsible>
+<Accordion className="w-full" type="single" collapsible>
   <AccordionItem value="item-1">
     <AccordionTrigger className="text-white">Refinando la Experiencia Web</AccordionTrigger>
     <AccordionContent className="text-white">

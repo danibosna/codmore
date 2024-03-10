@@ -2,6 +2,7 @@
 // import { useAuth } from '@hooks/useAuth';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import WalletData from "./WalletData";
 
 const navigation = [
   { name: "Servicios", href: "/servicios" },
@@ -17,25 +18,30 @@ export default function Nav() {
   const path = usePathname();
 
   return (
-    <nav className="fixed bottom-1 z-50 flex w-full justify-center">
-      <div className="flex w-1/3 justify-center">
-        <div className="w-full flex items-center justify-around">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={classNames(
-                item.href == path
-                  ? "custom-button mb-2 text-white"
-                  : "hover:custom-button text-slate-900 hover:text-slate-50",
-                "mb-2 px-3 py-2 text-xs font-medium md:text-sm",
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
+    <>
+      <nav className="fixed bottom-0 z-50 grid w-full grid-cols-3 justify-center">
+        <div className="col-start-2 col-end-3 flex justify-center">
+          <div className="flex w-full items-center justify-around">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={classNames(
+                  item.href == path
+                    ? "custom-button mb-2 text-white"
+                    : "hover:custom-button text-slate-400 hover:text-slate-50",
+                  "mb-2 px-3 py-2 text-xs font-medium md:text-sm",
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-    </nav>
+        <div className="mr-2 justify-self-end">
+          <WalletData />
+        </div>
+      </nav>
+    </>
   );
 }

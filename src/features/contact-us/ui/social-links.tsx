@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import GithubCorner from "react-github-corner";
 import { FaXTwitter, FaWhatsapp, FaLinkedin } from "react-icons/fa6";
 
 export const SocialLinks = () => {
@@ -14,6 +15,7 @@ export const SocialLinks = () => {
       <Link href="https://twitter.com/@codmoretech" passHref>
         <FaLinkedin className="w-8" size={25} />
       </Link>
+      {/* <GithubCorner href="https://github.com/danibosna/codmore" /> */}
     </div>
   );
 };
