@@ -11,7 +11,7 @@ export const ContactUs = () => {
     setIsVisible(!isVisible);
   };
   return (
-    <div className={`relative ${
+    <div className={`relative w-full ${
           isVisible ? "animate-slide-in" : "animate-slide-out -right-full"
         }`}>
       <ToggleButton onClick={() => toggleVisibility()} isVisible={isVisible} />

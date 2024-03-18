@@ -30,7 +30,7 @@ export default function Nav() {
                   item.href == path
                     ? "custom-button mb-2 text-white"
                     : "hover:custom-button text-slate-400 hover:text-slate-50",
-                  "mb-2 px-3 py-2 text-xs font-medium md:text-sm",
+                  "mb-2 px-3 py-2 text-xs mx-2 font-medium md:text-sm",
                 )}
               >
                 {item.name}
@@ -38,7 +38,7 @@ export default function Nav() {
             ))}
           </div>
         </div>
-        <div className="mr-2 justify-self-end">
+        <div className="lg:mr-2 justify-self-end">
           <WalletData />
         </div>
       </nav>

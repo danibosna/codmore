@@ -17,10 +17,10 @@ import services4 from "./assets/images/Services4.webp";
 
 const Catalogue = () => {
   return (
-    <section className="flex h-screen flex-col items-center justify-center">
+    <section className="flex h-screen w-full flex-col items-center justify-center">
       <h2 className="hidden">Servicios</h2>
       <Carousel
-        className="w-full md:w-1/2"
+      className="w-full h-full flex flex-col justify-center fixed md:w-1/2"
         plugins={[
           Autoplay({
             delay: 5000,

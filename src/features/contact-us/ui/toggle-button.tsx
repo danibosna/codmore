@@ -9,7 +9,7 @@ interface Props {
 
 export const ToggleButton: React.FC<Props> = ({ onClick, isVisible }) => {
   return (
-    <div className={''}>
+    <div className={'z-50'}>
       <Button onClick={onClick} variant={'custom'} className="absolute left-0 z-50 translate-x-[-100%]" size={"icon"}>
         <FaEnvelope />
       </Button>

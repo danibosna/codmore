@@ -6,20 +6,19 @@ import { ContactUs } from "~/features/contact-us/ui";
 export default function Header() {
   return (
     <>
-      <header className="absolute top-0 w-screen z-50">
-        <div className="flex justify-between">
+      <header className="absolute top-0 w-full z-50">
+        <div className="w-full flex items-center justify-between">
+          <div className="">
           <Link href="/" passHref>
-            <figure className="mx-8 p-0">
               <Image
+                className="cursor-pointer"
                 src={logo}
                 alt="codmore_logo"
-                width="225"
-                height="150"
-                className="cursor-pointer"
+                width="175"
               />
-            </figure>
           </Link>
-          <div className="flex flex-col justify-evenly overflow-x-hidden pl-14">
+          </div>
+          <div className="flex pl-9 right-0 flex-col fixed z-50 justify-evenly overflow-x-hidden">
             <ContactUs />
           </div>
         </div>

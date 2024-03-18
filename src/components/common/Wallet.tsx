@@ -1,20 +1,13 @@
 "use client";
 import { useWeb3React } from "@web3-react/core";
-import React, { useEffect, useState } from "react";
-import { ErrorBoundary, FallbackProps } from "react-error-boundary";
+import React from "react";
+import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 import { ConnectionOptions } from "~/lib/ConnectionOptions";
-import { ConnectionType, switchNetwork } from "~/lib/connectors/connections";
-import { CHAIN_INFO, INPUT_CHAIN_URL } from "~/lib/connectors/constants";
-import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
+import { INPUT_CHAIN_URL } from "~/lib/connectors/constants";
 import Link from "next/link";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "~/components/ui/hover-card";
 import { RxTokens } from "react-icons/rx";
 import { Accounts } from "./Accounts";
-import useWeb3 from "~/lib/useWeb3";
+import useWalletStore from "~/lib/store/useWalletStore";
 
 const FallbackComponent = ({ error }: FallbackProps) => {
   return (
@@ -27,9 +20,7 @@ const FallbackComponent = ({ error }: FallbackProps) => {
 
 const Wallet = () => {
   const { isActive } = useWeb3React();
-  const [connectionType, setConnectionType] = useState<ConnectionType | null>(
-    null,
-  );
+  const { connectionType, setConnectionType } = useWalletStore();
 
   return (
     <ErrorBoundary FallbackComponent={FallbackComponent}>

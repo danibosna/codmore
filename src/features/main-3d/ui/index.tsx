@@ -29,7 +29,7 @@ export const Main3D = ({ children }: Props) => {
           {/* <Stats /> */}
         </Suspense>
       </Canvas>
-      <main className="absolute bottom-0 z-30 w-full">{children}</main>
+      <main className="absolute overflow-hidden bottom-0 z-30 w-full">{children}</main>
     </div>
   );
 };

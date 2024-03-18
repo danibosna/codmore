@@ -22,14 +22,14 @@ async function connect(connector: Connector) {
 }
 
 const connectEagerly = async () => {
+  await connect(getConnection(ConnectionType.INJECTED).connector);
   await connect(getConnection(ConnectionType.NETWORK).connector);
+  await connect(getConnection(ConnectionType.WALLET_CONNECT).connector);
+  await connect(getConnection(ConnectionType.COINBASE_WALLET).connector);
   await connect(getConnection(ConnectionType.GNOSIS_SAFE).connector);
 };
 
 export const Web3ContextProvider = ({ children }: { children: ReactNode }) => {
-  const [connectionType, setConnectionType] = useState<ConnectionType | null>(
-    null,
-  );
   useEffect(() => {
     void connectEagerly();
   }, []);

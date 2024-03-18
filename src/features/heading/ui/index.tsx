@@ -4,7 +4,7 @@ import { AboutUsAccordion } from "./about-us-accordion";
 const Heading = () => {
   return (
       <section className="flex h-screen w-full flex-col items-center justify-end">
-        <div className="custom-container mb-14 inline-flex w-4/5 flex-col items-center px-8 py-4 md:w-2/4 lg:w-2/5">
+        <div className="custom-container max-h-[70%] mb-14 inline-flex w-4/5 flex-col items-center px-8 py-4 md:w-2/4 lg:w-2/5">
           <div className="mb-2 flex flex-col items-center text-slate-50">
             <h1 className="text-center text-4xl font-bold">{'Web3 & Blockchain'}</h1>
             <p className="text-lg font-thin italic text-center">

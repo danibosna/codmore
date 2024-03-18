@@ -3,6 +3,7 @@ import { Buffer } from "buffer";
 import { cookies } from "next/headers";
 import { TRPCReactProvider } from "~/trpc/react";
 import MainLayout from "~/components/layouts/main-layout";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Web3ContextProvider } from "~/lib/Web3ContextProvider";
 import "~/styles/globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Web3ContextProvider>
           <TRPCReactProvider cookies={cookies().toString()}>
             <MainLayout>{children}</MainLayout>
+            <ReactQueryDevtools initialIsOpen={false} />
           </TRPCReactProvider>
         </Web3ContextProvider>
       </body>

@@ -2,10 +2,10 @@
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { Button } from "~/components/ui/button";
 
-const url = "http://eepurl.com/iJwl9o";
+const url = "https://eepurl.com/iJwl9o";
 
 export const MailchimpInput = () => (
-  <div className="p-2">
+  <div className="p-2 w-5/6">
     <MailchimpSubscribe
       url={url}
       render={({ subscribe, status, message }) => (
@@ -53,11 +53,11 @@ const SimpleForm = ({ status, message, className, style, onSubmitted }: {
           ref={node => (input = node)}
           type="email"
           placeholder="Tu Correo (Newsletter)"
-          className="custom-container placeholder:text-slate-400 text-white px-2"
+          className="custom-container text-xs placeholder:text-slate-400 text-white px-2"
         />
         <Button 
           variant={'custom'} 
-          className="p-1 px-2 text-white font-semibold" 
+          className="p-1 px-2 text-white text-xs font-semibold" 
           onClick={submit}
         >
           Subscribir
