@@ -35,46 +35,64 @@ const Catalogue = () => {
           <CarouselItem className="flex justify-center">
             <ServiceCard
               id="0"
-              titulo="Solid Web Project"
+              titulo="Desarrollo de DApps"
               src={services}
               alt={"test"}
-              info="Crea una marca más sólida y de impacto ofreciendo un perfil detallado de tu mision y vision como referente de la industria ante tu Comunidad."
+              info="Creación de aplicaciones descentralizadas (DApps) personalizadas para diversos casos de uso en la blockchain, como finanzas descentralizadas (DeFi), NFTs, juegos y más."
             />
           </CarouselItem>
           <CarouselItem className="flex justify-center">
             <ServiceCard
               id="4"
-              titulo="Diamond Tech Services"
+              titulo="Integración 3D y Metaversos"
               src={services4}
               alt={"test"}
-              info="Saca el Máximo Potencial de tu idea y hazla brillar dentro de la industria con un sistema personalizado y a medida para todas las necesidades de tu marca."
+              info="Diseño y desarrollo de entornos virtuales y experiencias 3D inmersivas para metaversos y aplicaciones en el espacio Web3."
             />
           </CarouselItem>
           <CarouselItem className="flex justify-center">
             <ServiceCard
               id="1"
-              titulo="Avanced Web Project"
+              titulo="Auditorías de Smart Contracts"
               src={services1}
               alt={"test"}
-              info="Conoce más sobre tus colaboradores y socios de negocios integrando una base de datos con la información más relevante sobre la lógica de tu negocio"
+              info="Evaluación exhaustiva de la seguridad de la blockchain y auditorías especializadas de contratos inteligentes para identificar y mitigar vulnerabilidades."
             />
           </CarouselItem>
           <CarouselItem className="flex justify-center">
             <ServiceCard
               id="3"
-              titulo="Simple Web Project"
+              titulo="Tokenización de Activos y Desarrollo de NFTs"
               src={services3}
               alt={"test"}
-              info="Obtén un primer acercamiento calculado y preciso de tu Oferta de Valor hacia los potenciales integrantes nuevos de tu comunidad."
+              info="Creación de tokens y desarrollo de NFTs (Tokens No Fungibles) para la representación y comercialización de activos digitales únicos."
             />
           </CarouselItem>
           <CarouselItem className="flex justify-center">
             <ServiceCard
               id="2"
-              titulo="Cloud Services & Analytics"
+              titulo="Plataformas de Mercados Descentralizados"
               src={services2}
               alt={"test"}
-              info="Obtén un servicio avanzado y personalizado para la administración y el manejo de los datos de tu empresa en la nube."
+              info="Construcción de plataformas de intercambio de criptomonedas y mercados descentralizados (DEX) para facilitar el comercio seguro y transparente de activos digitales."
+            />
+          </CarouselItem>
+          <CarouselItem className="flex justify-center">
+            <ServiceCard
+              id="6"
+              titulo="Consultoría en Blockchain"
+              src={services2}
+              alt={"test"}
+              info="Asesoramiento y estrategias de adopción empresarial para ayudar a las organizaciones a integrar y aprovechar esta tecnología."
+            />
+          </CarouselItem>
+          <CarouselItem className="flex justify-center">
+            <ServiceCard
+              id="5"
+              titulo="Web3 SEO"
+              src={services2}
+              alt={"test"}
+              info="Estrategias especializadas para mejorar la visibilidad y el posicionamiento de proyectos y aplicaciones en el ecosistema Web3, aumentando su alcance y relevancia."
             />
           </CarouselItem>
         </CarouselContent>
